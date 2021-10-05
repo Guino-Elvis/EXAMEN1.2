@@ -1,4 +1,4 @@
-package crudvector;
+package src.crudvector;
 
 import java.util.*;
 
