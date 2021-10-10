@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JFrame;
 import javax.swing.*;
@@ -106,7 +107,7 @@ public class CrudVectorFrame extends JFrame {
                        dp.ap_materno=txt_apellido_materno.getText();
                        dp.codigo=txt_codigo.getText();
                        System.out.print("insertanddoooooo"+dp.nombres);                               
-                       metodos.registrarPersona(dp);
+                       metodos.registrarPersonaExamen(dp);
                        JOptionPane.showMessageDialog(
                                                       null,
                                                       "Se registro con exito",
@@ -124,11 +125,11 @@ public class CrudVectorFrame extends JFrame {
                 public void actionPerformed(ActionEvent e){
                  
                     String columnas[] = {"Nombres","Paterno","Materno", "Codigo"};
-                    Object filas[][]= new Object[metodos.lista.size()][4];
+                    Object filas[][]= new Object[metodos.listaPersonas.size()][4];
                     
-                    Vector nuevoVector= metodos.lista;
-                    for(int i=0;i<nuevoVector.size();i++){
-                      datosPersona v= (datosPersona)metodos.lista.get(i);
+                    ArrayList<datosPersona> listaPersonas= metodos.listaPersonas;
+                    for(int i=0;i<listaPersonas.size();i++){
+                      datosPersona v= (datosPersona)metodos.listaPersonas.get(i);
                       filas[i][0]=v.nombres;
                       filas[i][1]=v.ap_paterno;
                       filas[i][2]=v.ap_materno;
