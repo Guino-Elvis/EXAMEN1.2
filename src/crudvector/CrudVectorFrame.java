@@ -119,7 +119,10 @@ public class CrudVectorFrame extends JFrame {
             }
         );
         
-        
+        // esta parte se cambio  
+
+
+
         menuReportes_General.addActionListener
         (   new ActionListener(){
                 public void actionPerformed(ActionEvent e){
@@ -135,6 +138,9 @@ public class CrudVectorFrame extends JFrame {
                       filas[i][2]=v.ap_materno;
                       filas[i][3]=v.codigo;
                     }
+
+                    
+                    // hasta a qui llamando a la clase registrarPersonaExamen
                     
                     JTable tabla = new JTable(filas, columnas);
                     JScrollPane tabla1 = new JScrollPane(tabla);
